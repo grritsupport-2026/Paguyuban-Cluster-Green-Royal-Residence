@@ -1525,9 +1525,9 @@
   
 
   <!-- Bootstrap 5 JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://script.google.com/macros/s/AKfycbyS7tPM82flbUHo6XsrxaGndJ0_Xczm5IiPEDdvRH7E/dev"></script>
   <!-- SweetAlert2 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+  <script src="https://script.google.com/macros/s/AKfycbyS7tPM82flbUHo6XsrxaGndJ0_Xczm5IiPEDdvRH7E/dev"></script>
 
   <script>
   (function() {
@@ -1602,83 +1602,7 @@
       };
     })();
 
-    // ==================== MOCK DATABASE (PREVIEW MODE) ====================
-    var mockDB = {
-      warga: [
-        { id_warga: 'W-001', nik: '3271012345670001', nama: 'Budi Santoso', no_rumah: 'A-01', jenis_kelamin: 'Laki-laki', tempat_lahir: 'Bogor', tanggal_lahir: '1990-05-15', status_tinggal: 'Tetap', status_pernikahan: 'Menikah', posisi_keluarga: 'Kepala Keluarga', no_hp: '081234567890', status_warga: 'Aktif', created_at: '2026-01-10' },
-        { id_warga: 'W-002', nik: '3271012345670002', nama: 'Siti Aminah', no_rumah: 'A-02', jenis_kelamin: 'Perempuan', tempat_lahir: 'Jakarta', tanggal_lahir: '1995-10-20', status_tinggal: 'Tetap', status_pernikahan: 'Belum', posisi_keluarga: 'Anggota Keluarga', no_hp: '089876543210', status_warga: 'Aktif', created_at: '2026-01-12' },
-        { id_warga: 'W-003', nik: '3271012345670003', nama: 'Joko Widodo', no_rumah: 'B-05', jenis_kelamin: 'Laki-laki', tempat_lahir: 'Solo', tanggal_lahir: '1961-06-21', status_tinggal: 'Tetap', status_pernikahan: 'Menikah', posisi_keluarga: 'Kepala Keluarga', no_hp: '08111222333', status_warga: 'Aktif', created_at: '2026-02-15' },
-        { id_warga: 'W-004', nik: '3271012345670004', nama: 'Dewi Lestari', no_rumah: 'C-12', jenis_kelamin: 'Perempuan', tempat_lahir: 'Bandung', tanggal_lahir: '1988-12-05', status_tinggal: 'Kontrak', status_pernikahan: 'Menikah', posisi_keluarga: 'Anggota Keluarga', no_hp: '085711122233', status_warga: 'Aktif', created_at: '2026-02-20' }
-      ],
-      iuran: [
-        { id_iuran: 'TX-I-001', id_warga: 'W-001', bulan: 'Januari', tahun: '2026', jumlah: 50000, tanggal_bayar: '2026-01-05', petugas_penerima: 'admin', bukti: 'https://drive.google.com/open?id=mock-bukti-iuran-1' },
-        { id_iuran: 'TX-I-002', id_warga: 'W-002', bulan: 'Januari', tahun: '2026', jumlah: 50000, tanggal_bayar: '2026-01-06', petugas_penerima: 'staff', bukti: '' },
-        { id_iuran: 'TX-I-003', id_warga: 'W-001', bulan: 'Februari', tahun: '2026', jumlah: 50000, tanggal_bayar: '2026-02-05', petugas_penerima: 'admin', bukti: '' }
-      ],
-      kasKeluar: [
-        { id_keluar: 'TX-K-001', keperluan: 'Pembelian Lampu Jalan Gang 3', jumlah: 150000, tanggal_keluar: '2026-01-15', petugas: 'admin', bukti: 'https://drive.google.com/open?id=mock-bukti-kas-1' },
-        { id_keluar: 'TX-K-002', keperluan: 'Konsumsi Kerja Bakti Bulanan', jumlah: 100000, tanggal_keluar: '2026-01-20', petugas: 'staff', bukti: '' }
-      ],
-      aset: [
-        { id_aset: 'AST-001', nama_barang: 'Tenda RT', kategori: 'Perlengkapan Acara', jumlah_total: 3, jumlah_tersedia: 2, kondisi_fisik: 'Baik', keterangan_lokasi: 'Disimpan di gudang balai warga', foto: '', petugas: 'admin', created_at: '2026-01-15' },
-        { id_aset: 'AST-002', nama_barang: 'Kursi Plastik', kategori: 'Perlengkapan Acara', jumlah_total: 150, jumlah_tersedia: 120, kondisi_fisik: 'Baik', keterangan_lokasi: 'Tersedia untuk dipinjam acara warga', foto: '', petugas: 'admin', created_at: '2026-01-15' },
-        { id_aset: 'AST-003', nama_barang: 'Sound System', kategori: 'Peralatan', jumlah_total: 2, jumlah_tersedia: 1, kondisi_fisik: 'Baik', keterangan_lokasi: '1 unit dipinjam warga Blok A', foto: '', petugas: 'admin', created_at: '2026-02-01' },
-        { id_aset: 'AST-004', nama_barang: 'Mesin Potong Rumput', kategori: 'Alat Kerja', jumlah_total: 1, jumlah_tersedia: 0, kondisi_fisik: 'Baik', keterangan_lokasi: 'Dipinjam oleh pak RT', foto: '', petugas: 'staff', created_at: '2026-02-10' }
-      ],
-      users: [
-        { username: 'admin', fullname: 'Super Admin', role: 'Admin' },
-        { username: 'staff', fullname: 'Staff User', role: 'Staff' }
-      ],
-      auditLog: [
-        { timestamp: '2026-02-21 10:00:00', username: 'admin', action: 'LOGIN', detail: 'Login berhasil (Simulasi)' }
-      ],
-      settings: {
-        nominal_iuran: 20000,
-        kategori_pemasukan: ["Iuran Bulanan", "Sumbangan", "Lain-lain"],
-        kategori_pengeluaran: ["Kebersihan", "Keamanan", "Sosial", "Operasional", "Lain-lain"],
-        kategori_aset: ["Peralatan", "Perlengkapan Acara", "Alat Kerja", "Lain-lain"],
-        kategori_surat: ["Pembuatan KTP", "Pembuatan KK", "Surat Keterangan Domisili", "Surat Keterangan Usaha", "Surat Keterangan Tidak Mampu", "Lainnya"],
-        pdf_label_kota_tanggal: "Jakarta, 06 Juni 2026",
-        pdf_label_bendahara: "Bendahara",
-        pdf_nama_bendahara: "Gusti & Dicky",
-        pdf_label_ketua: "Ketua Paguyuban",
-        pdf_nama_ketua: "TB Muhammad Solech Al Fajri",
-        rt_name: "Ketua Paguyuban",
-        rt_logo: "https://img.icons8.com/color/96/home.png",
-        hero_title: "Bersama Warga,<br><span>Membangun Lingkungan</span><br>yang Nyaman dan Harmonis",
-        hero_subtitle: "Dari Warga, Oleh Warga, untuk Pengurus Tercinta. Bersama Kita Bisa, Paguyuban Kuat Berkat Gotong Royong",
-        footer_copyright: "© 2026 Portal Cluster Green Royal Residence. Seluruh hak cipta dilindungi.",
-        footer_link_1_text: "Tentang Kami",
-        footer_link_1_url: "#",
-        footer_link_2_text: "Kebijakan Privasi",
-        footer_link_2_url: "#",
-        footer_link_3_text: "Syarat & Ketentuan",
-        footer_link_3_url: "#",
-        footer_link_4_text: "Bantuan",
-        footer_link_4_url: "#"
-      },
-      permohonanSurat: [
-        { id_tiket: 'SRT-001', tanggal: '2026-06-01', jenis_layanan: 'Pembuatan KTP', nama_pemohon: 'Farhan Al Faiz', no_wa: '081234567890', nik_no_rumah: '3271012345670002 / A-02', detail_permintaan: 'Permohonan surat pengantar untuk keperluan pembuatan KTP baru.', no_surat: '001/SRT/VI/2026', status: 'Selesai' },
-        { id_tiket: 'SRT-002', tanggal: '2026-06-02', jenis_layanan: 'Surat Keterangan Domisili', nama_pemohon: 'Dewi Lestari', no_wa: '085711122233', nik_no_rumah: '3271012345670004 / C-12', detail_permintaan: 'Permohonan surat pengantar untuk keperluan domisili tinggal.', no_surat: '', status: 'Pending' }
-      ],
-      peminjamanAset: [
-        { id_tiket: 'AST-001', tanggal: '2026-06-02', nama_peminjam: 'Budi Santoso', no_wa: '081234567890', no_rumah: 'A-01', detail_peminjaman: 'Aset: Kursi Plastik | Meminjam 50 kursi untuk syukuran.', status: 'Disetujui' }
-      ],
-      pengaduanSaran: [
-        { id_tiket: 'ADN-001', tanggal: '2026-06-03', jenis_layanan: 'Pengaduan Layanan', nama_pengadu: 'Joko Widodo', no_wa: '08111222333', lokasi_kejadian: 'Taman Blok B', detail_pengaduan: 'Ada pohon tumbang menghalangi jalan masuk taman.', bukti_foto: '', status: 'Pending' }
-      ],
-      agenda: [
-        { id_agenda: 'AGD-001', judul_kegiatan: 'Kerja Bakti Lingkungan', kategori: 'GORO', tanggal_jam: '25 Mei 2024 (07.00 - 10.00 WIB)', lokasi: 'Titik Kumpul Lapangan RT', status: 'AKAN DATANG', petugas: 'admin', created_at: '2026-05-20' },
-        { id_agenda: 'AGD-002', judul_kegiatan: 'Rapat Pengurus RT', kategori: 'RAPAT', tanggal_jam: '28 Mei 2024 (19.30 - 21.00 WIB)', lokasi: 'Rumah Ketua RT', status: 'TERJADWAL', petugas: 'admin', created_at: '2026-05-22' },
-        { id_agenda: 'AGD-003', judul_kegiatan: 'Posyandu Balita', kategori: 'LAINNYA', tanggal_jam: '01 Juni 2024 (08.00 - 11.00 WIB)', lokasi: 'Balai Warga', status: 'TERJADWAL', petugas: 'staff', created_at: '2026-05-25' }
-      ],
-      pengumuman: [
-        { id_pengumuman: 'PGM-001', tanggal: '2026-05-20', tipe: 'PENTING', judul: 'Perbaikan Jalan Lingkungan', isi_pengumuman: 'Akan dilakukan perbaikan jalan paving blok pada hari Sabtu, 25 Mei 2024 mulai pukul 08.00 WIB sampai selesai. Mohon warga memarkirkan kendaraan di area yang ditentukan.', petugas: 'admin', created_at: '2026-05-20' },
-        { id_pengumuman: 'PGM-002', tanggal: '2026-05-18', tipe: 'INFO', judul: 'Iuran Bulan Mei 2024', isi_pengumuman: 'Pengumpulan iuran wajib bulanan sebesar Rp20.000 untuk bulan Mei sudah dapat dibayarkan melalui petugas penarik iuran atau transfer ke rekening RT.', petugas: 'admin', created_at: '2026-05-18' },
-        { id_pengumuman: 'PGM-003', tanggal: '2026-05-15', tipe: 'INFO', judul: 'Libur Hari Raya Waisak', isi_pengumuman: 'Diberitahukan bahwa pelayanan administrasi pengantar surat RT/RW akan libur pada hari Raya Waisak tanggal 23 Mei 2024 dan buka kembali pada 24 Mei 2024.', petugas: 'staff', created_at: '2026-05-15' }
-      ]
-    };
-
+    
     // ==================== MANDATORY HELPERS ====================
     function escapeHTML(str) {
       if (!str) return '';
